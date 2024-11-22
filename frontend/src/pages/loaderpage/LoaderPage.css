@@ -1,0 +1,71 @@
+.loader-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('../../assets/first-page.jfif') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: visible; */
+    transition: background-color 0.1s ease; /* Flash effect */
+  }
+  
+  .flash {
+    background-color: rgba(255, 255, 255, 0.8); /* Lightning flash effect */
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .loader-animation {
+    position: relative;
+    z-index: 3;
+  }
+  
+  .rolling-light {
+    width: 100px;
+    height: 10px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    animation: light-roll 1.5s infinite;
+    margin-top: 35rem;
+  }
+  
+  @keyframes light-roll {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Game title styling */
+  .game-title {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    font-family: "Irish Grover", system-ui;
+    font-weight: 700;
+    color: #D40606;
+    animation: zoomInOut 30s infinite ease-in-out;
+    text-align: center;
+    z-index: 3;
+  }
+  
+  @keyframes zoomInOut {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.3);
+    }
+  }

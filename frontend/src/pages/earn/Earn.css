@@ -1,0 +1,179 @@
+.earn-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/earn-background.png') center center / cover no-repeat;
+    font-family: sans-serif;
+  }
+  .earn-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .earn-button {
+    cursor: pointer;
+  }
+
+  .earn-header-button {
+    display: flex;
+  }
+  .earn-header-item {
+    display: flex;
+    align-items: center;
+    padding: 0 150px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .earn-header-item img {
+    width: 40px;
+  }
+
+  .earn-button {
+    padding: 10px 50px;
+    border: 2px solid greenyellow;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .earn-info-top {
+    display: flex;
+    margin-left: 5.9rem;
+    gap: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .earn-info-bottom {
+    display: flex;
+    margin-left: 5.9rem;
+    gap: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .earn-info-top .info-box {
+    padding: 15px 70px;
+    background-color: black;
+    color: white;
+    border: 1px solid greenyellow;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .earn-info-bottom .info-box {
+    padding: 15px 50px;
+    background-color: black;
+    color: white;
+    border: 1px solid greenyellow;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .earn-info-bottom .nft-btn {
+    padding: 15px 80px;
+  }
+
+
+.info-box span {
+    display: block;
+    font-size: 18px;
+    margin-top: 5px;
+    color: white;
+  }
+
+  .marketplace-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 160px;
+    cursor: pointer;
+  }
+  .marketplace-button img {
+    width: 400px;
+    height: 120px;
+    border-radius: 8px;
+  }
+  
+  .marketplace-button span {
+    position: absolute;
+    left: 5.8rem;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .character {
+    position: absolute;
+    bottom: 100px;
+    right: 90px;
+  }
+  
+  .character img {
+    height: 450px;
+  }
+
+  @media (max-width: 692px) {
+    .earn-header {
+        padding: 10px;
+      }
+      .earn-button {
+        padding: 5px 20px;
+        font-size: 10px;
+      }
+      .avatar img {
+        width: 35px;
+        height: 30px;
+    }
+    
+    .earn-header-item {
+        padding: 0 70px;
+        
+      }
+      .earn-info-top {
+        margin-left:2rem;
+        gap: 20px;
+      }
+      .earn-info-bottom {
+        margin-left: 2rem;
+        gap: 20px;
+      }
+      .earn-info-top .info-box {
+        padding: 8px 40px;
+        font-size: 12px;
+      }
+    
+      .earn-info-bottom .info-box {
+        padding: 8px 30px;
+        font-size: 12px;
+    
+      }
+      .marketplace-button img {
+        width: 250px;
+        height: 90px;
+      }
+      
+      .marketplace-button span {
+        left: 2.5rem;
+        font-size: 15px;
+      }
+      
+      .character {
+        position: absolute;
+        /* bottom: 0px; */
+        right: 20px;
+      }
+      .character img {
+        height: 280px;
+      }
+    
+    }

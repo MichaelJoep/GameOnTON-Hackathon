@@ -1,0 +1,35 @@
+{
+  "name": "game_on_ton",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "ngrok": "ngrok http 3000",
+    "dev:ngrok": "nodemon server.js & ngrok http 3000",
+    "update:ngrok": "node scripts/update-ngrok.js"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.0",
+    "multer": "^1.4.5-lts.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "nodemon": "^3.1.7",
+    "socket.io": "^4.8.1",
+    "ton": "^13.9.0",
+    "ton-client-node-js": "^0.28.0",
+    "tonweb": "^0.0.66"
+  },
+  "devDependencies": {
+    "ngrok": "^5.0.0-beta.2"
+  }
+}

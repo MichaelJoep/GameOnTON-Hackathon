@@ -1,0 +1,114 @@
+.landing-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Background image settings */
+.background-image {
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/landingbg.jfif') no-repeat center center;
+    background-size: cover;
+    animation: backgroundMove 15s ease-in-out infinite; /* smooth background movement */
+    display: flex;
+    justify-content: space-between; /* Space between left and right button groups */
+    position: relative;
+  }
+
+/* Flex containers for the buttons */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+.button-container.left {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+}
+
+.button-container.right {
+  position: absolute;
+  right: 5%;
+  top: 30%;
+}
+
+.button-container.bottom {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%); /* Centers the bottom buttons */
+  display: flex; 
+  flex-direction: row; 
+  gap: 20px; 
+}
+
+/* Button Styling */
+.menu-button {
+  padding: 15px 30px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.menu-button:active {
+  transform: translateY(0px);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+} 
+
+#event {
+    background-image: url('../../assets/event-btn.jfif'); 
+  }
+  
+  #marketplace {
+    background-image: url('../../assets/marketplace-btn.jfif');
+  }
+  
+  #earn {
+    background-image: url('../../assets/earn-btn.jfif');
+  }
+  
+  #battle {
+    background-image: url('../../assets/battle-btn.jfif');
+  }
+  
+  #multiplayer {
+    background-image: url('../../assets/multiplayer-btn.jfif');
+  }
+  
+  #leaderboard {
+    background-image: url('../../assets/leaderboard-btn.jfif');
+  }
+  
+  #store {
+    background-image: url('../../assets/store-btn.jfif');
+  }
+  
+  #profile {
+    background-image: url('../../assets/profile-btn.jfif');
+  }
+  
+  @keyframes backgroundMove {
+    0% {
+      background-position: center top;
+    }
+    50% {
+      background-position: center bottom;
+    }
+    100% {
+      background-position: center top;
+    }
+  }
