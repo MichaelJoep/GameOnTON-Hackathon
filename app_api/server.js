@@ -30,6 +30,14 @@ connectDB();
 //middleware functions
 app.use(express.json());
 
+
+
+//route database
+app.use('/api/auth', authRoutes);
+app.use('/api/ton', tonRoutes);
+app.use('/api/aeon', aeonRoutes);
+
+
 // Initialize the server with `http` for socket.io compatibility
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -39,15 +47,6 @@ const io = new Server(server, {
     credentials: true,
   },
 });
-
-
-
-
-
-//route database
-app.use('/api/auth', authRoutes);
-app.use('/api/ton', tonRoutes);
-app.use('/api/aeon', aeonRoutes);
 
 
 registerWebSocketEvents(io);
