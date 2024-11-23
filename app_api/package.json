@@ -8,7 +8,6 @@
     "ngrok": "ngrok http 3000",
     "dev:ngrok": "nodemon server.js & ngrok http 3000",
     "update:ngrok": "node scripts/update-ngrok.js"
-
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +23,7 @@
     "multer": "^1.4.5-lts.1",
     "node-telegram-bot-api": "^0.66.0",
     "nodemon": "^3.1.7",
+    "pusher": "^5.2.0",
     "socket.io": "^4.8.1",
     "ton": "^13.9.0",
     "ton-client-node-js": "^0.28.0",
