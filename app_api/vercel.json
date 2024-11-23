@@ -24,7 +24,6 @@
       "BACKEND_URL": "@backend_url",
       "FRONTEND_URL": "@frontend_url",
       "AEON_API_BASE_URL": "@aeon_api_base_url",
-      "CUSTOMER_NUM": "@customer_num",
       "APP_ID": "@app_id",
       "SECRET_KEY": "@secret_key",
       "MERCHANT_ACCOUNT": "@merchant_account",
