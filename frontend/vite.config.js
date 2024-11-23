@@ -15,10 +15,7 @@ export default defineConfig({
   assetsInclude: ["**/*.glb", "**/*.gltf", "**/*.png", "**/*.jpg", "**/*.jpeg"],
   server: {
     port: 3005,
-    proxy: {
-      // "/api": "http://localhost:3000",
-      "/api": process.env.BACKEND_URL || "http://localhost:3000"
-    }
+    proxy: mode === 'development' ? { "/api": process.env.BACKEND_URL } : undefined,
   },
   resolve: {
     alias: {

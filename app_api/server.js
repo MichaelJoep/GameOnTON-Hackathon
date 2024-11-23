@@ -34,7 +34,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || "http://localhost:3005", // Allow frontend connection
+    origin: process.env.FRONTEND_URL || "http://localhost:3005", 
     methods: ["GET", "POST"],
     credentials: true,
   },

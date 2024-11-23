@@ -5,7 +5,7 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <TonConnectUIProvider 
-  manifestUrl="https://8b15-197-210-85-203.ngrok-free.app/tonconnect-manifest.json"
+  manifestUrl="http://localhost:3005/tonconnect-manifest.json"
   bridgeUrl="https://bridge.ton.space">
     <App />
   </TonConnectUIProvider>,

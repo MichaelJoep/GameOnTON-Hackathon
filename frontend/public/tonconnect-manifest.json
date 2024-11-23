@@ -1,6 +1,6 @@
 {
     "name": "Ghost Hunter",
     "description": "Ghost Hunter Game on TON Blockchain",
-    "url": "https://8b15-197-210-85-203.ngrok-free.app",  
-    "iconUrl": "https://8b15-197-210-85-203.ngrok-free.app/game-token.png" 
+    "url": "http://localhost:3005",  
+    "iconUrl": "http://localhost:3005/game-token.png" 
   }

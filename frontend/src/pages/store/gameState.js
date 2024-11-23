@@ -1,4 +1,4 @@
-import create from "zustand";
+import {create} from "zustand";
 
 const useGameState = create((set, get) => ({
     // Game State

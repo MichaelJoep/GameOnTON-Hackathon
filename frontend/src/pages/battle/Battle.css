@@ -7,7 +7,7 @@
     align-items: center;
   
     /* Set the image as a fixed background  */
-    background: url("/src/assets/models/environ/horror-scene.jpg") no-repeat center center fixed;
+    background: url("/src/assets/models/environ/scene.jpeg") no-repeat center center fixed;
     background-size: cover;
   }
   
