@@ -15,22 +15,7 @@
         "src": "/socket.io/(.*)",
         "dest": "server.js"
       }
-    ],
-    "env": {
-      "PORT": "3000",
-      "MONGO_URI_ONLINE": "@mongo_uri_online",
-      "JWT_SECRET": "@jwt_secret",
-      "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
-      "BACKEND_URL": "@backend_url",
-      "FRONTEND_URL": "@frontend_url",
-      "AEON_API_BASE_URL": "@aeon_api_base_url",
-      "APP_ID": "@app_id",
-      "SECRET_KEY": "@secret_key",
-      "MERCHANT_ACCOUNT": "@merchant_account",
-      "MERCHANT_PASSWORD": "@merchant_password",
-      "TON_NETWORK_MAINNET": "@ton_network_mainnet",
-      "TON_NETWORK_TESTNET": "@ton_network_testnet",
-      "TON_API_KEY": "@ton_api_key"
-    }
+    ]
+    
   }
   

@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http'); // Required for socket.io
 const { Server } = require('socket.io'); // Import socket.io
 const registerWebSocketEvents = require('./utils/websocketEvents');
+const websocketRoutes = require("./routes/websocketRoutes")
 const dotenv = require("dotenv");
 dotenv.config()
 const cors = require("cors");
@@ -47,6 +48,9 @@ app.use(
 app.use('/api/auth', authRoutes);
 app.use('/api/ton', tonRoutes);
 app.use('/api/aeon', aeonRoutes);
+
+//websocket middleware
+app.use("/api/websocket", websocketRoutes);
 
 
 

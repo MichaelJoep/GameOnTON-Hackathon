@@ -1,11 +1,10 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls,  Html, useProgress } from "@react-three/drei";
+import { OrbitControls, Html, useProgress } from "@react-three/drei";
 import HunterOne from "../../components/hunters/hunterone/HunterOne";
 import Zombie from "../../components/zombie/Zombie";
 import useGameState from "../store/gameState";
-import * as THREE from "three";
-
+import Pusher from "pusher-js";
 import "./Battle.css";
 
 const Loader = () => {
@@ -17,10 +16,27 @@ const Loader = () => {
   );
 };
 
+const Battle = ({ roomId }) => {
+  const { zombies, addZombie, addPlayer } = useGameState();
 
+  useEffect(() => {
+    // Initialize Pusher for the specific game room
+    const pusher = new Pusher(import.meta.env.VITE_PUSHER_KEY, {
+      cluster: import.meta.env.VITE_PUSHER_CLUSTER,
+    });
+    const channel = pusher.subscribe(`game-room-${roomId}`);
 
-const Battle = () => {
-  const { zombies, addZombie } = useGameState();
+    // Listen for new players joining
+    channel.bind("player-joined", (data) => {
+      console.log(`${data.playerName} joined the game`);
+      addPlayer(data.player);
+    });
+
+    return () => {
+      pusher.unsubscribe(`game-room-${roomId}`);
+      pusher.disconnect();
+    };
+  }, [roomId, addPlayer]);
 
   // Spawn zombies every 1-2 minutes
   useEffect(() => {
@@ -31,33 +47,26 @@ const Battle = () => {
     return () => clearInterval(interval);
   }, [addZombie]);
 
-  
   return (
     <div className="battle-container">
-    <Canvas
-      camera={{ position: [0, 0, 5], fov: 50 }}
-      style={{ width: "100vw", height: "100vh" }}
-    >
-      <Suspense fallback={<Loader />}>
-        {/* Ambient Light */}
-        <ambientLight intensity={0.5} />
-        {/* Directional Light */}
-        <directionalLight position={[5, 5, 5]} intensity={1} />
-        <HunterOne id={1} position={[0, 0, 0]} />
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        style={{ width: "100vw", height: "100vh" }}
+      >
+        <Suspense fallback={<Loader />}>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 5, 5]} intensity={1} />
+          <HunterOne id={1} position={[0, 0, 0]} />
 
-
-          {/* Render Zombies */}
           {zombies.map((zombie, index) => (
             <Zombie key={index} position={zombie.position} />
           ))}
 
-        {/* Orbit Controls */}
-        <OrbitControls />
-      </Suspense>
-    </Canvas>
-  </div>
-  
-  )
-}
+          <OrbitControls />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};
 
-export default Battle
+export default Battle;
