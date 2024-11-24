@@ -52,7 +52,10 @@ app.use('/api/aeon', aeonRoutes);
 //websocket middleware
 app.use("/api/websocket", websocketRoutes);
 
-app.get("/", (req, res) => res.send("Ghost hunters"))
+// Root route
+app.get("/", (req, res) => {
+  res.status(200).send("Welcome to the Ghost Hunter API!");
+});
 
 
 
