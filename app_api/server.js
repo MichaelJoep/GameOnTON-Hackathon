@@ -52,6 +52,8 @@ app.use('/api/aeon', aeonRoutes);
 //websocket middleware
 app.use("/api/websocket", websocketRoutes);
 
+app.get("/", (req, res) => res.send("Ghost hunters"))
+
 
 
 // WebSocket setup
