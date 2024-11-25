@@ -6,6 +6,7 @@ const websocketRoutes = require("./routes/websocketRoutes")
 const dotenv = require("dotenv");
 dotenv.config()
 const cors = require("cors");
+const path = require("path");
 const authRoutes = require("./routes/authRoutes");
 const tonRoutes = require("./routes/tonRoutes");
 const aeonRoutes = require("./routes/paymentRoutes");
@@ -57,6 +58,14 @@ app.get("/", (req, res) => {
   res.status(200).send("Welcome to the Ghost Hunter API!");
 });
 
+// Serve static files from the frontend build directory
+const frontendPath = path.join(__dirname, "../frontend/dist");; 
+app.use(express.static(frontendPath));
+
+// Catch-all route to serve the React app for any unmatched route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
 
 
 // WebSocket setup

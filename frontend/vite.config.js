@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => ({
   },
   resolve: {
     alias: {
-      "@": "/src", // Shortcut for importing from the `src` folder
+      "@": "/src", 
     },
   },
   base: mode === "production" ? "/" : "/", // Base public path for the app
