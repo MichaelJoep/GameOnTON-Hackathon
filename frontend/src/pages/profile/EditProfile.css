@@ -58,7 +58,7 @@
     gap: 30px;
     padding: 15px 50px;
 }
-.connect-wallet {
+.nickname-btn {
     padding: 20px 50px;
 }
 .character-image {
@@ -94,3 +94,19 @@
     border-radius: 4px;
     cursor: pointer;
   }
+
+  /* Mobile screen devices */
+@media screen and (max-width: 550px) {
+    .profile-button {
+        font-size: 16px!important;
+    }
+    .nickname-btn {
+        padding: 20px 88px!important;
+    }
+    .button-connect .edit-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px!important;
+    }
+}

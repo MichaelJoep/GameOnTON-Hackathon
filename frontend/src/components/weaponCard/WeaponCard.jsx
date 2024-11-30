@@ -1,6 +1,7 @@
-import React, {Suspense, lazy} from 'react';
+import React, {Suspense, lazy, useState, useEffect} from 'react';
 import {Canvas} from "@react-three/fiber";
 import {OrbitControls, useGLTF, Html, useProgress} from "@react-three/drei";
+import {isWebGLAvailable} from "../../utils/webglCheck"
 import "./WeaponCard.css";
 
 
@@ -23,6 +24,23 @@ const WeaponModel = ({ modelPath, scale = 45 }) => {
 
 
 const WeaponCard = ({ weapon, isSelected, onSelect }) => {
+  const [webglSupported, setWebglSupported] = useState(true);
+
+  useEffect(() => {
+    if (!isWebGLAvailable()) {
+      setWebglSupported(false);
+    }
+  }, []);
+
+  if (!webglSupported) {
+    return (
+      <div className="fallback-container">
+        <h1>Your device does not support WebGL.</h1>
+        <p>Try using a more modern device or browser.</p>
+      </div>
+    );
+  }
+  
   return (
     <div
       className={`weapon-card ${isSelected ? "selected" : ""}`}

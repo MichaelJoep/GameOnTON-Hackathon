@@ -63,7 +63,7 @@ const EditProfile = () => {
             </div>
           )}
           {/* Edit nickname logic*/}
-          <button className="profile-button connect-wallet" onClick={()=> setShowEditNickname(!showEditNickname)}>
+          <button className="profile-button nickname-btn" onClick={()=> setShowEditNickname(!showEditNickname)}>
             Nickname
           </button>
           {showEditNickname && (

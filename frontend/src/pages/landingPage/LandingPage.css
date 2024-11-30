@@ -1,3 +1,4 @@
+/*Larger Screen device*/
 .landing-container {
     width: 100vw;
     height: 100vh;
@@ -112,3 +113,64 @@
       background-position: center top;
     }
   }
+
+/* Mobile Screen Devices */
+@media screen and (max-width: 550px) {
+  /* Adjust container size and layout for small screens */
+  .landing-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Maintain background animation */
+  .background-image {
+    animation: backgroundMove 15s ease-in-out infinite;
+    background-size: cover;
+  }
+
+  /* Adjust button container positions */
+  .button-container.left {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+  }
+
+  .button-container.right {
+    position: absolute;
+    right: 5%;
+    top: 20%;
+  }
+
+  .button-container.bottom {
+    bottom: 5%;
+    gap: 10px;
+  }
+
+  /* Reduce button size for smaller screens */
+  .menu-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-size: contain;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Adjust hover effects for mobile buttons */
+  .menu-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Ensure button animations remain consistent */
+  #event,
+  #marketplace,
+  #earn,
+  #battle,
+  #multiplayer,
+  #leaderboard,
+  #store,
+  #profile {
+    background-size: contain;
+  }
+}

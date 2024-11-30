@@ -163,7 +163,7 @@
       }
       
       .marketplace-button span {
-        left: 2.5rem;
+        left: 2.5rem!important;
         font-size: 15px;
       }
       
@@ -176,4 +176,12 @@
         height: 280px;
       }
     
+    }
+
+    @media screen and (max-width: 474px) {
+      .marketplace-button span {
+        left: 0.2rem!important;
+        text-align: center!important;
+        font-size: 15px;
+      }
     }

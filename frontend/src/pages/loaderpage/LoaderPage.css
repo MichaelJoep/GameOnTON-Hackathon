@@ -1,3 +1,5 @@
+
+/*LARGE SCREEN SIZE*/
 .loader-container {
     width: 100vw;
     height: 100vh;
@@ -69,3 +71,55 @@
       transform: translateX(-50%) scale(1.3);
     }
   }
+
+  .fallback-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .fallback-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .fallback-container p {
+    font-size: 1.2rem;
+  }
+
+  /* Mobile styles for smaller screens */
+@media screen and (max-width: 550px) {
+  .loader-container {
+      background-size: cover;
+  }
+
+  .rolling-light {
+      width: 80px;
+      height: 8px;
+      margin-top: 25rem;
+  }
+
+  .game-title {
+      top: 60%;
+      font-size: 2rem;
+  }
+
+  .fallback-container h1 {
+      font-size: 1.5rem;
+  }
+
+  .fallback-container p {
+      font-size: 1rem;
+  }
+
+  canvas {
+      width: 100%;
+      height: 100%;
+  }
+}

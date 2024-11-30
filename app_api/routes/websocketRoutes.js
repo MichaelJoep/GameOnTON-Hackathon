@@ -24,6 +24,18 @@ router.post("/emit-event", async (req, res) => {
   }
 });
 
+
+//Get rooms
+router.get("/rooms", async (req, res) => {
+  try {
+    const rooms = await Room.find({});
+    res.status(200).json(rooms); 
+  } catch (error) {
+    console.error("Error fetching rooms:", error);
+    res.status(500).json({ error: "Failed to fetch rooms" });
+  }
+});
+
 // Join a room
 router.post("/rooms/:roomId/join", async (req, res) => {
   const { roomId } = req.params;

@@ -5,7 +5,7 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <TonConnectUIProvider 
-  manifestUrl="http://localhost:3005/tonconnect-manifest.json"
+  manifestUrl="https://ghost-hunters-ui.vercel.app/tonconnect-manifest.json"
   bridgeUrl="https://bridge.ton.space">
     <App />
   </TonConnectUIProvider>,

@@ -1,9 +1,10 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Html, useProgress } from "@react-three/drei";
 import HunterOne from "../../components/hunters/hunterone/HunterOne";
 import Zombie from "../../components/zombie/Zombie";
 import useGameState from "../store/gameState";
+import {isWebGLAvailable} from "../../utils/webglCheck";
 import Pusher from "pusher-js";
 import "./Battle.css";
 
@@ -17,6 +18,7 @@ const Loader = () => {
 };
 
 const Battle = ({ roomId }) => {
+  const [webglSupported, setWebglSupported] = useState(true);
   const { zombies, addZombie, addPlayer } = useGameState();
 
   useEffect(() => {
@@ -46,6 +48,21 @@ const Battle = ({ roomId }) => {
     }, Math.random() * 60000 + 60000);
     return () => clearInterval(interval);
   }, [addZombie]);
+
+  useEffect(() => {
+    if (!isWebGLAvailable()) {
+      setWebglSupported(false);
+    }
+  }, []);
+
+  if (!webglSupported) {
+    return (
+      <div className="fallback-container">
+        <h1>Your device does not support WebGL.</h1>
+        <p>Try using a more modern device or browser.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="battle-container">

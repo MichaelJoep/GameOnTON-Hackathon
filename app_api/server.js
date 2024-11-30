@@ -51,7 +51,7 @@ app.use('/api/ton', tonRoutes);
 app.use('/api/aeon', aeonRoutes);
 
 //websocket middleware
-app.use("/api/websocket", websocketRoutes);
+app.use("/api/multiplayer", websocketRoutes);
 
 // Root route
 app.get("/", (req, res) => {

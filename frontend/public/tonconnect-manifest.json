@@ -1,6 +1,6 @@
 {
     "name": "Ghost Hunter",
     "description": "Ghost Hunter Game on TON Blockchain",
-    "url": "http://localhost:3005",  
-    "iconUrl": "http://localhost:3005/game-token.png" 
+    "url": "https://ghost-hunters-ui.vercel.app/",  
+    "iconUrl": "https://ghost-hunters-ui.vercel.app/game-token.png" 
   }

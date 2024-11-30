@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import WeaponCard from '../../components/weaponCard/WeaponCard';
 import AssignWeapon from '../../components/AssignWeapon'; 
-import { FaAlignJustify } from "react-icons/fa6";
-import { FaX } from "react-icons/fa6";
 import "./Store.css";
 
 
@@ -19,18 +17,13 @@ const weapons = [
 
 const Store = ({ onWeaponSelect }) => {
   const [selectedWeapon, setSelectedWeapon] = useState(null);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+ 
 
   const handleSelect = (weapon) => {
     setSelectedWeapon(weapon);
     onWeaponSelect(weapon);
   };
 
-
-   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
 
 
   return (

@@ -1,9 +1,11 @@
+/*Large screen devices*/
 .profile-container {
     position: relative;
     height: 100vh;
     width: 100%;
     display: flex;
     padding: 30px;
+    
 }
 .profile-background-image {
     background-image: url('../../assets/profile-background.jfif');
@@ -26,6 +28,7 @@
     flex-direction: column;
     gap: 2rem;
     margin-top: 20px;
+    text-align: center;
 }
 .profile-button {
     padding: 20px 35px;
@@ -38,6 +41,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     transition: all 0.3s ease;
+    text-align: center;
 }
 .backgroundColor-basic {
     background-color: lightgray;
@@ -47,6 +51,8 @@
 .button-connect {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 .icon-logo img {
     width: 65px;
@@ -64,6 +70,26 @@
     background-image: url('../../assets/profile-image.png');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 380px;
-    height: 560px;
+    width: 480px;
+    position: absolute;
+    right: 80px;
+    bottom: 80px;
+}
+
+/* Mobile screen devices */
+@media screen and (max-width: 550px) {
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-button {
+        font-size: 18px!important;
+    }
+    
+}
+@media screen and (max-width: 486px) {
+    .profile-button {
+        font-size: 15px!important;
+    }
+    
 }

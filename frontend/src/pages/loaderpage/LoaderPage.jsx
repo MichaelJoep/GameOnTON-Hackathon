@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Html, useProgress } from '@react-three/drei';
+import {isWebGLAvailable} from "../../utils/webglCheck";
 import { useNavigate } from 'react-router-dom';
 import * as THREE from 'three';
 import "./LoaderPage.css";
@@ -92,12 +93,16 @@ const LightningBolt = ({ position }) => {
 };
 
 const LoaderPage = () => {
+  const [webglSupported, setWebglSupported] = useState(true);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Delay for navigating to the landing page
-    const timeout = setTimeout(() => {
+    if(!isWebGLAvailable()){
+      setWebglSupported(false)
+    } else {
+      // Delay for navigating to the landing page
+      const timeout = setTimeout(() => {
       console.log("Redirecting to /landing-page");
       setLoading(false);
       navigate('/landing-page');
@@ -105,7 +110,19 @@ const LoaderPage = () => {
     }, 35000); // 35 seconds delay
 
     return () => clearTimeout(timeout);
+    }
+    
   }, [navigate]);
+
+
+  if (!webglSupported) {
+    return (
+      <div className="fallback-container">
+        <h1>Your device does not support WebGL.</h1>
+        <p>Please try on a different device or browser.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="loader-container">

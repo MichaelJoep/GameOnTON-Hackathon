@@ -5,7 +5,7 @@ import useGameState from "../../../pages/store/gameState";
 
 
 const HunterOne = ({ id, position }) => {
-  const { scene, animations } = useGLTF("/characters/hunterOne/hunterOne.gltf");
+  const { scene, animations } = useGLTF("/models/characters/hunterOne/hunterone.gltf");
   const { actions } = useAnimations(animations, scene);
   const hunterRef = useRef();
   const [currentAction, setCurrentAction] = useState("idle");
